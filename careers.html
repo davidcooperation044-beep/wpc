@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers — Wimpy Cooperations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">Wimpy Cooperations</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="careers.html" aria-current="page">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <a class="btn btn-ghost" href="contact.html">Start a project</a>
+        <a class="btn btn-accent" href="careers.html">Apply</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-panel split-grid">
+        <div>
+          <p class="eyebrow">Careers</p>
+          <h1>Join a team that ships real products, not just proposals.</h1>
+          <p class="lede">We're looking for developers and affiliate partners who want to build apps, platforms, and commerce systems with a small, accountable team. If you prefer shipping working software to writing buzzword-heavy proposals, we should talk.</p>
+        </div>
+        <div class="content-card">
+          <h2>Why build with us</h2>
+          <p>Our work is grounded in products you can point to: Wimp-Drop, WimpSchool, WimpyBooks, and event booking systems. We value practical delivery, readable code, and teams that can maintain what they ship.</p>
+          <ul>
+            <li>Meaningful product work, not agency scraps</li>
+            <li>Live launches, real user feedback, and constant iteration</li>
+            <li>Flexible roles for developers and affiliate/partner contributors</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-panel roles-grid">
+        <article class="role-card">
+          <h2>Developer</h2>
+          <p>Front-end, back-end, and full-stack engineers who can own a shipped product and keep it stable after launch.</p>
+          <ul>
+            <li>React, Vue, Node.js, or API integrations</li>
+            <li>Feature work, bug fixes, and deploy-ready releases</li>
+            <li>Product-focused code reviews and clean handoff docs</li>
+          </ul>
+        </article>
+        <article class="role-card">
+          <h2>Affiliate/Partner</h2>
+          <p>Designers, growth operators, or technical partners who want to collaborate on landing pages, web funnels, and product launches.</p>
+          <ul>
+            <li>Brand systems that support product releases</li>
+            <li>Launch planning with a software delivery lens</li>
+            <li>Referral and affiliate relationships for high-value projects</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section-panel form-panel">
+        <div class="section-header">
+          <p class="eyebrow">Apply</p>
+          <h2>Send a short pitch and your best work sample.</h2>
+        </div>
+        <form id="careerForm" class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Role interest
+            <select name="role" id="roleInterest" required>
+              <option value="Developer">Developer</option>
+              <option value="Affiliate / Partner">Affiliate / Partner</option>
+            </select>
+          </label>
+          <div id="affiliateDetailsSection" class="hidden-field" aria-hidden="true">
+            <label>
+              Affiliate work plan
+              <textarea name="affiliateDetails" id="affiliateDetails" rows="5" placeholder="Tell us how you plan to affiliate, your social media or website handle, and the important details about your affiliate work."></textarea>
+            </label>
+            <p class="field-note">Share your referral channel, audience, and how you plan to promote the partnership.</p>
+          </div>
+          <label>
+            Portfolio or GitHub
+            <input type="url" name="portfolio" placeholder="https://" aria-describedby="linkHelp">
+          </label>
+          <p id="linkHelp" class="field-note">Optionally include a portfolio or GitHub link.</p>
+          <label>
+            Upload CV
+            <input type="file" name="cv" accept=".pdf,.doc,.docx" aria-describedby="fileHelp">
+          </label>
+          <p id="fileHelp" class="field-note">PDF or Word document preferred.</p>
+          <label>
+            Short pitch
+            <textarea name="pitch" rows="5" required></textarea>
+          </label>
+          <button class="btn btn-accent" type="submit">Submit application</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="eyebrow">Want to work on real products?</p>
+        <h2>Apply and we'll follow up with open roles and collaboration opportunities.</h2>
+      </div>
+      <div class="footer-actions">
+        <a class="btn btn-ghost" href="index.html">Back to home</a>
+        <a class="btn btn-accent" href="contact.html">Start a project</a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

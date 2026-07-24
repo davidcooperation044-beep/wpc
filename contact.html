@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Wimpy Cooperations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">Wimpy Cooperations</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <a class="btn btn-ghost" href="contact.html">Start a project</a>
+        <a class="btn btn-accent" href="careers.html">Apply</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-panel split-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1>Tell us about your project and what you need built.</h1>
+          <p class="lede">If you want a site, app, or product system that can ship, tell us the idea, the budget range, and the key outcomes you expect.</p>
+        </div>
+        <div class="contact-info">
+          <p><strong>Email</strong><br>hello@wimpycoops.com</p>
+          <p><strong>Location</strong><br>Remote-first, focused on product launches.</p>
+        </div>
+      </section>
+
+      <section class="section-panel form-panel">
+        <div class="section-header">
+          <p class="eyebrow">Project inquiry</p>
+          <h2>Start with a short brief.</h2>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <div class="field-group">
+            <h3>Project type</h3>
+            <label>
+              <select name="projectType" required>
+                <optgroup label="Website">
+                  <option>Portfolio (1–5 pages)</option>
+                  <option>Landing page</option>
+                  <option>Business site (5–10 pages)</option>
+                  <option>Blog site</option>
+                  <option>WordPress site</option>
+                  <option>Website redesign</option>
+                </optgroup>
+                <optgroup label="E-commerce & Payments">
+                  <option>E-commerce store</option>
+                  <option>Payment integration</option>
+                </optgroup>
+                <optgroup label="Product & Platform">
+                  <option>SaaS MVP</option>
+                  <option>Custom dashboard/admin</option>
+                  <option>Authentication system</option>
+                  <option>CMS development</option>
+                  <option>REST API development</option>
+                </optgroup>
+                <optgroup label="Fixes & Optimization">
+                  <option>Bug fixes</option>
+                  <option>Speed optimization</option>
+                  <option>Responsive design fixes</option>
+                </optgroup>
+              </select>
+            </label>
+          </div>
+          <div class="form-break">
+            <span>Budget details</span>
+          </div>
+          <div class="field-group">
+            <h3>Budget range</h3>
+            <label>
+              <select name="budget" required>
+                <optgroup label="Entry">
+                  <option>$50–200</option>
+                  <option>$150–500</option>
+                </optgroup>
+                <optgroup label="Growth">
+                  <option>$300–800</option>
+                  <option>$500–1,500</option>
+                  <option>$800–3,000</option>
+                </optgroup>
+                <optgroup label="Scale">
+                  <option>$2,000–6,000</option>
+                  <option>$3,000–10,000</option>
+                  <option>$6,000–20,000+</option>
+                  <option>$10,000+</option>
+                </optgroup>
+              </select>
+            </label>
+          </div>
+          <label>
+            Custom budget
+            <input type="text" name="customBudget" placeholder="Enter your budget if none of the options match">
+          </label>
+          <p class="field-note">If your budget doesn't fit the list above, enter it here so we can respond accurately.</p>
+          <label>
+            Message
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <button class="btn btn-accent" type="submit">Send inquiry</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="eyebrow">Next step</p>
+        <h2>We answer project briefs quickly and keep the conversation focused on deliverable software.</h2>
+      </div>
+      <div class="footer-actions">
+        <a class="btn btn-ghost" href="services.html">Review services</a>
+        <a class="btn btn-accent" href="careers.html">Apply</a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
