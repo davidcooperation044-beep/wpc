@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Live software shipped by Wimpy Cooperations — Wimp-Drop, WimpyBooks, WimpSchool, WimpyAI, and Eaudeyplay. See what we've actually built." />
+<meta name="theme-color" content="#030303" />
+<title>Work — Wimpy Cooperations</title>
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Wimpy Cooperations" />
+<meta property="og:title" content="Work — Wimpy Cooperations" />
+<meta property="og:description" content="Live software shipped by Wimpy Cooperations — Wimp-Drop, WimpyBooks, WimpSchool, WimpyAI, and Eaudeyplay." />
+<meta property="og:url" content="https://www.wimpy-corp.com.ng/work.html" />
+<meta property="og:image" content="https://www.wimpy-corp.com.ng/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Work — Wimpy Cooperations" />
+<meta name="twitter:description" content="Live software shipped by Wimpy Cooperations." />
+<meta name="twitter:image" content="https://www.wimpy-corp.com.ng/og-image.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23030303'/%3E%3Ctext x='50' y='68' font-size='60' font-family='sans-serif' font-weight='800' fill='%238b5cf6' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #030303;
+    --bg-elevated: #0e0e0e;
+    --border: rgba(255,255,255,0.08);
+    --border-hover: rgba(255,255,255,0.18);
+    --text: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    --violet: #8b5cf6;
+    --cyan: #06b6d4;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--violet);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(3,3,3,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem clamp(1.5rem, 5vw, 3rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.25rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a[aria-current="page"] {
+    color: var(--text);
+  }
+
+  .nav-links a[aria-current="page"] {
+    color: var(--violet);
+  }
+
+  .nav-cta {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .btn-primary {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .btn-primary:hover {
+    background: var(--violet);
+    color: var(--text);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px;
+  }
+
+  .nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+  }
+
+  /* Hero */
+  .hero {
+    padding: clamp(4rem, 10vh, 7rem) 0 clamp(2.5rem, 6vh, 4rem);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--violet);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 60ch;
+  }
+
+  /* Work grid */
+  .work-list {
+    padding: clamp(3rem, 8vh, 5rem) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding: 2.5rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  .project-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .project-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #10b981;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.25);
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+  }
+
+  .status-pill::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+  }
+
+  .project-desc {
+    color: var(--text-secondary);
+    max-width: 60ch;
+    margin-bottom: 1.25rem;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    font-family: monospace;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    transition: all 0.25s ease;
+  }
+
+  .project-link:hover {
+    background: var(--violet);
+    border-color: var(--violet);
+  }
+
+  /* CTA band */
+  .cta-band {
+    padding: clamp(3rem, 8vh, 5rem) 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .cta-band h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    max-width: 24ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem clamp(1.5rem, 5vw, 3rem);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .btn-ghost { display: none; }
+    .project-card {
+      grid-template-columns: 1fr;
+    }
+    .project-link {
+      justify-self: start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Wimpy Cooperations</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="careers.html" class="btn btn-ghost">Apply</a>
+      <a href="contact.html" class="btn btn-primary">Start a project</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileNav" style="display:none; border-top:1px solid var(--border); padding:1.5rem;">
+    <ul style="display:flex; flex-direction:column; gap:1.25rem; list-style:none;">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Work</div>
+      <h1>Live software, not case study theater.</h1>
+      <p>Every product below is shipped and running today. No mockups, no "coming soon" — this is what we've actually built, for ourselves and for the teams we partner with.</p>
+    </div>
+  </section>
+
+  <section class="work-list container">
+
+    <article class="project-card">
+      <div>
+        <div class="project-head">
+          <span class="project-name">Wimp-Drop</span>
+          <span class="status-pill">Live</span>
+        </div>
+        <p class="project-desc">An e-commerce storefront built for direct digital sales and recurring product drops — product catalog, checkout, and order management in one flow.</p>
+        <div class="tag-row">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">E-Commerce</span>
+        </div>
+      </div>
+      <a href="https://wimpdrop.onrender.com" target="_blank" rel="noopener" class="project-link">
+        Visit site ↗
+      </a>
+    </article>
+
+    <article class="project-card">
+      <div>
+        <div class="project-head">
+          <span class="project-name">WimpyBooks</span>
+          <span class="status-pill">Live</span>
+        </div>
+        <p class="project-desc">A subscription reading platform with monetizable collections, secure access control, and a distraction-free reader built for engagement.</p>
+        <div class="tag-row">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Stripe</span>
+        </div>
+      </div>
+      <a href="https://wimpybooks.netlify.app" target="_blank" rel="noopener" class="project-link">
+        Visit site ↗
+      </a>
+    </article>
+
+    <article class="project-card">
+      <div>
+        <div class="project-head">
+          <span class="project-name">WimpSchool</span>
+          <span class="status-pill">Live</span>
+        </div>
+        <p class="project-desc">A SaaS school management system built around attendance, billing, grade tracking, and real-time student-teacher communication.</p>
+        <div class="tag-row">
+          <span class="tag">React</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Real-time</span>
+        </div>
+      </div>
+      <a href="https://wimpschool.onrender.com" target="_blank" rel="noopener" class="project-link">
+        Visit site ↗
+      </a>
+    </article>
+
+    <article class="project-card">
+      <div>
+        <div class="project-head">
+          <span class="project-name">WimpyAI</span>
+          <span class="status-pill">Live</span>
+        </div>
+        <p class="project-desc">An AI platform providing intelligent automation and conversational interfaces, built on a scalable backend for context-aware responses.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">LLM</span>
+        </div>
+      </div>
+      <a href="https://wimpyai.onrender.com" target="_blank" rel="noopener" class="project-link">
+        Visit site ↗
+      </a>
+    </article>
+
+    <article class="project-card">
+      <div>
+        <div class="project-head">
+          <span class="project-name">Eaudeyplay</span>
+          <span class="status-pill">Live</span>
+        </div>
+        <p class="project-desc">An event management and booking platform — event discovery, ticketing, and a polished, animation-driven brand experience.</p>
+        <div class="tag-row">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Booking</span>
+          <span class="tag">UI/UX</span>
+        </div>
+      </div>
+      <a href="https://eaudeyplay.com" target="_blank" rel="noopener" class="project-link">
+        Visit site ↗
+      </a>
+    </article>
+
+  </section>
+
+  <section class="cta-band container">
+    <h2>Want something like this built for you?</h2>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary">Start a project</a>
+      <a href="careers.html" class="btn btn-ghost">Build with our team</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Wimpy Cooperations is the parent company behind Wimp-Drop, WimpSchool, WimpyBooks, WimpyAI, and Eaudeyplay.
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.style.display === 'block';
+    mobileNav.style.display = isOpen ? 'none' : 'block';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>
+
+</body>
+</html>
