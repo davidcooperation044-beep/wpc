@@ -43,21 +43,50 @@
 </head>
 <body>
   <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="index.html">Wimpy Cooperations</a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-      </nav>
-      <div class="topbar-actions">
-        <a class="btn btn-ghost" href="contact.html">Start a project</a>
-        <a class="btn btn-accent" href="careers.html">Apply</a>
-      </div>
-    </header>
+    <!--
+  UPDATED TOPBAR — replace the existing <header class="topbar">...</header>
+  block on EVERY page (index.html, work.html, about.html, services.html,
+  careers.html, contact.html) with this version.
 
+  Two things changed from your original:
+  1. Added a <button class="nav-toggle"> — only visible below 640px.
+  2. Added a <nav id="mobileNav" class="mobile-nav"> panel right after
+     the header, which the toggle opens/closes.
+
+  Set aria-current="page" on whichever link matches the current page,
+  in BOTH the desktop .nav-links AND the .mobile-nav — same as you're
+  already doing for the desktop nav.
+-->
+
+<header class="topbar">
+  <a class="brand" href="index.html">Wimpy Cooperations</a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn-ghost" href="contact.html">Start a project</a>
+    <a class="btn btn-accent" href="careers.html">Apply</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="work.html">Work</a>
+  <a href="careers.html">Careers</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav-actions">
+    <a class="btn btn-ghost" href="contact.html">Start a project</a>
+    <a class="btn btn-accent" href="careers.html">Apply</a>
+  </div>
+</nav>
     <main>
       <section class="section-panel split-grid">
         <div>
