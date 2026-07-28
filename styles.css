@@ -473,6 +473,22 @@ textarea {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
+.ui-panel {
+  height: 220px;
+  display: grid;
+  gap: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden; /* add this so the image respects the rounded corners */
+}
+
+.ui-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px; /* matches .visual-card's radius */
+}
+
 .ui-top {
   height: 22px;
   background: rgba(255,255,255,0.1);
