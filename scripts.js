@@ -47,6 +47,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  if (!toggle || !mobileNav) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close the menu when a link inside it is clicked
+  mobileNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close the menu if the viewport is resized back to desktop width
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 640 && mobileNav.classList.contains('is-open')) {
+      mobileNav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
 // ===== Shared form-submit helpers =====
 function showFormMessage(form, text, isError) {
   let el = form.querySelector('.form-submit-message');
@@ -170,37 +197,5 @@ if (careerForm) {
   });
 }
 
-/* MOBILE NAV TOGGLE
-   ==================
-   Append this to your existing scripts.js (don't replace the whole
-   file — just add this block to the end of it).
-   Works on every page automatically since it looks for #navToggle
-   and #mobileNav, which you'll add to each page's topbar.
-*/
-(function () {
-  const toggle = document.getElementById('navToggle');
-  const mobileNav = document.getElementById('mobileNav');
 
-  if (!toggle || !mobileNav) return;
-
-  toggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  // Close the menu when a link inside it is clicked
-  mobileNav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Close the menu if the viewport is resized back to desktop width
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 640 && mobileNav.classList.contains('is-open')) {
-      mobileNav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
 })();
