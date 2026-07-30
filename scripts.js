@@ -1,16 +1,7 @@
-// ===== Wimpy Cooperations corporate systems Supabase project =====
-// Public anon key — safe to expose client-side by design. It only
-// allows what the RLS policies permit (INSERT into applications,
-// INSERT into the cv-uploads storage bucket — nothing else).
+
 const WIMPY_SUPABASE_URL = 'https://wwlgrktvcrkmrbyapyml.supabase.co';
 const WIMPY_SUPABASE_ANON_KEY = 'sb_publishable_DPYC6KjZPjmQgSPeRYYq6g_HA9xgLpI';
-
-// FIX: resolve the client lazily (at call-time) instead of once at
-// parse-time. Previously this ran immediately when scripts.js loaded,
-// before the Supabase CDN script (loaded after it) had finished —
-// so window.supabase was always undefined and this was permanently
-// null, no matter what. Calling this fresh each time a form submits
-// means it works regardless of script tag order.
+ime a form submits
 let _wimpySupabaseClient = null;
 function getWimpySupabase() {
   if (_wimpySupabaseClient) return _wimpySupabaseClient;
@@ -19,7 +10,6 @@ function getWimpySupabase() {
   return _wimpySupabaseClient;
 }
 
-// ===== Hero hover micro-interaction =====
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!prefersReducedMotion) {
   const hero = document.querySelector('.hero');
@@ -33,7 +23,6 @@ if (!prefersReducedMotion) {
   }
 }
 
-// ===== Careers form: show/hide affiliate-specific field =====
 const toggleAffiliateDetails = () => {
   const roleSelect = document.querySelector('#roleInterest');
   const affiliateSection = document.querySelector('#affiliateDetailsSection');
@@ -57,11 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ===== Mobile nav toggle =====
-// FIX: this now lives in its own IIFE, completely separate from the
-// form-handling code below. Previously, if #navToggle/#mobileNav were
-// ever missing on a page, the early "return" here would silently skip
-// ALL the form-submit code too, since they shared one function scope.
+
 (function () {
   const toggle = document.getElementById('navToggle');
   const mobileNav = document.getElementById('mobileNav');
@@ -88,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-// ===== Shared form-submit helpers =====
 function showFormMessage(form, text, isError) {
   let el = form.querySelector('.form-submit-message');
   if (!el) {
@@ -114,7 +98,6 @@ function setSubmitting(form, isSubmitting, label) {
   }
 }
 
-// ===== Contact form (project inquiries) → applications table =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async (event) => {
@@ -152,7 +135,6 @@ if (contactForm) {
   });
 }
 
-// ===== Careers form (job/affiliate applications) → applications table + CV upload =====
 const careerForm = document.getElementById('careerForm');
 if (careerForm) {
   careerForm.addEventListener('submit', async (event) => {
