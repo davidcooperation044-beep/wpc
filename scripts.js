@@ -5,9 +5,19 @@
 const WIMPY_SUPABASE_URL = 'https://wwlgrktvcrkmrbyapyml.supabase.co';
 const WIMPY_SUPABASE_ANON_KEY = 'sb_publishable_DPYC6KjZPjmQgSPeRYYq6g_HA9xgLpI';
 
-const wimpySupabase = window.supabase
-  ? window.supabase.createClient(WIMPY_SUPABASE_URL, WIMPY_SUPABASE_ANON_KEY)
-  : null;
+// FIX: resolve the client lazily (at call-time) instead of once at
+// parse-time. Previously this ran immediately when scripts.js loaded,
+// before the Supabase CDN script (loaded after it) had finished —
+// so window.supabase was always undefined and this was permanently
+// null, no matter what. Calling this fresh each time a form submits
+// means it works regardless of script tag order.
+let _wimpySupabaseClient = null;
+function getWimpySupabase() {
+  if (_wimpySupabaseClient) return _wimpySupabaseClient;
+  if (!window.supabase) return null;
+  _wimpySupabaseClient = window.supabase.createClient(WIMPY_SUPABASE_URL, WIMPY_SUPABASE_ANON_KEY);
+  return _wimpySupabaseClient;
+}
 
 // ===== Hero hover micro-interaction =====
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -47,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// ===== Mobile nav toggle =====
+// FIX: this now lives in its own IIFE, completely separate from the
+// form-handling code below. Previously, if #navToggle/#mobileNav were
+// ever missing on a page, the early "return" here would silently skip
+// ALL the form-submit code too, since they shared one function scope.
 (function () {
   const toggle = document.getElementById('navToggle');
   const mobileNav = document.getElementById('mobileNav');
@@ -58,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close the menu when a link inside it is clicked
   mobileNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('is-open');
@@ -66,13 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close the menu if the viewport is resized back to desktop width
   window.addEventListener('resize', () => {
     if (window.innerWidth > 640 && mobileNav.classList.contains('is-open')) {
       mobileNav.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
     }
   });
+})();
 
 // ===== Shared form-submit helpers =====
 function showFormMessage(form, text, isError) {
@@ -83,7 +97,8 @@ function showFormMessage(form, text, isError) {
     form.appendChild(el);
   }
   el.textContent = text;
-  el.style.color = isError ? '#c0392b' : 'var(--accent, #2e7d32)';
+  el.style.color = isError ? '#e05a4e' : '#4cc77f';
+  el.style.fontWeight = '600';
   el.style.marginTop = '0.75rem';
 }
 
@@ -105,6 +120,7 @@ if (contactForm) {
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const wimpySupabase = getWimpySupabase();
     if (!wimpySupabase) {
       showFormMessage(contactForm, 'Form service unavailable right now. Please email us directly.', true);
       return;
@@ -142,6 +158,7 @@ if (careerForm) {
   careerForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const wimpySupabase = getWimpySupabase();
     if (!wimpySupabase) {
       showFormMessage(careerForm, 'Form service unavailable right now. Please email us directly.', true);
       return;
@@ -153,7 +170,6 @@ if (careerForm) {
 
     let cvStoragePath = null;
 
-    // Upload CV to Supabase Storage first, if one was provided
     if (cvFile && cvFile.size > 0) {
       const safeName = cvFile.name.replace(/[^a-zA-Z0-9.\-_]/g, '_');
       const path = `${Date.now()}_${safeName}`;
@@ -196,6 +212,3 @@ if (careerForm) {
     toggleAffiliateDetails();
   });
 }
-
-
-})();
