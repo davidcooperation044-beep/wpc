@@ -6,7 +6,7 @@
   <title>Wimpy Cooperations — Built software, not buzzwords</title>
   <link rel="icon" href="/logo.png">
   <link rel="stylesheet" href="styles.css">
-  <!-- Add this inside <head> on every page, ideally index.html at minimum -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,9 +27,6 @@
   ]
 }
 </script>
-
-<!-- Add these too — same idea as your portfolio page, tailored per page.
-     Update og:title / og:description / og:url per page for best results. -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Wimpy Cooperations" />
 <meta property="og:title" content="Wimpy Cooperations — Built software, not buzzwords" />
@@ -43,20 +40,7 @@
 </head>
 <body>
   <div class="page-shell">
-   <!--
-  UPDATED TOPBAR — replace the existing <header class="topbar">...</header>
-  block on EVERY page (index.html, work.html, about.html, services.html,
-  careers.html, contact.html) with this version.
-
-  Two things changed from your original:
-  1. Added a <button class="nav-toggle"> — only visible below 640px.
-  2. Added a <nav id="mobileNav" class="mobile-nav"> panel right after
-     the header, which the toggle opens/closes.
-
-  Set aria-current="page" on whichever link matches the current page,
-  in BOTH the desktop .nav-links AND the .mobile-nav — same as you're
-  already doing for the desktop nav.
--->
+ 
 
 <header class="topbar">
   <a class="brand" href="index.html">Wimpy Cooperations</a>
@@ -170,26 +154,14 @@
         </div>
       </section>
 
-      <!-- 
-  SPOTLIGHT / NEW BRANCH BANNER
-  ================================
-  Place this section right after the closing </section> of your
-  hero ("split-grid") and before the "What we do" section-panel.
-
-  It uses ONLY classes that already exist in your styles.css
-  (.section-panel, .split-grid, .status.planned, .btn, .hero-actions,
-  .visual-frame, etc.) — so no new CSS is required at all.
-
-  To advertise a different product later, edit the three spots
-  marked EDIT HERE below.
--->
+     
 
 <section class="section-panel spotlight-panel">
   <div class="split-grid">
     <div>
       <span class="status planned">New</span>
 
-      <!-- EDIT HERE: eyebrow + headline for the product you're advertising -->
+      
       <p class="eyebrow" style="margin-top:16px;">New branch</p>
       <h2>Wimp-Drop is live — our new e-commerce storefront.</h2>
 
