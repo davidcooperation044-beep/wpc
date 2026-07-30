@@ -1,6 +1,5 @@
-
-const REFERRAL_SUPABASE_URL = 'YOUR_SUPABASE_PROJECT_URL';
-const REFERRAL_SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const REFERRAL_SUPABASE_URL = 'https://wwlgrktvcrkmrbyapyml.supabase.co';
+const REFERRAL_SUPABASE_ANON_KEY = 'sb_publishable_DPYC6KjZPjmQgSPeRYYq6g_HA9xgLpI';
 
 (function trackReferralClick() {
   if (!window.supabase) return; 
