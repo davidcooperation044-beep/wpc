@@ -621,9 +621,7 @@ textarea {
 
 
 
-/* Fix .code-line to hold real text instead of decorative empty bars.
-   The old rule (height: 12px, solid pill background) was built for
-   fake blank "code" shapes, not actual sentences. */
+
 .code-slate {
   gap: 14px;
 }
@@ -641,9 +639,7 @@ textarea {
   white-space: normal;
 }
 
-/* These width modifiers were for the old bar-width look — no longer
-   needed now that lines hold real text, safe to leave unused or
-   remove them from your HTML */
+
 .code-slate .code-line.short,
 .code-slate .code-line.medium {
   width: auto;
