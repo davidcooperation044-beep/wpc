@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Careers — Wimpy Cooperations</title>
-  <link rel="icon" href="/logo.png">
+   <link rel="icon" href="/logo.png">
   <link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">
+
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -21,13 +22,11 @@
   },
   "sameAs": [
     "https://wimpybooks.netlify.app",
-    "https://wimpdrop.onrender.com",
+    "https://wimpdrop.com.ng",
     "https://wimpschool.onrender.com"
   ]
 }
 </script>
-
-
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Wimpy Cooperations" />
 <meta property="og:title" content="Wimpy Cooperations — Built software, not buzzwords" />
@@ -41,37 +40,21 @@
 </head>
 <body>
   <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">Wimpy Cooperations</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="careers.html" aria-current="page">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <a class="btn btn-ghost" href="contact.html">Start a project</a>
+        <a class="btn btn-accent" href="careers.html">Apply</a>
+      </div>
+    </header>
 
-
-<header class="topbar">
-  <a class="brand" href="index.html">Wimpy Cooperations</a>
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="work.html">Work</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="topbar-actions">
-    <a class="btn btn-ghost" href="contact.html">Start a project</a>
-    <a class="btn btn-accent" href="careers.html">Apply</a>
-  </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="work.html">Work</a>
-  <a href="careers.html">Careers</a>
-  <a href="contact.html">Contact</a>
-  <div class="mobile-nav-actions">
-    <a class="btn btn-ghost" href="contact.html">Start a project</a>
-    <a class="btn btn-accent" href="careers.html">Apply</a>
-  </div>
-</nav>
     <main>
       <section class="section-panel split-grid">
         <div>
@@ -129,6 +112,7 @@
             Role interest
             <select name="role" id="roleInterest" required>
               <option value="Developer">Developer</option>
+              <option value="Account Manager">Account Manager</option>
               <option value="Affiliate / Partner">Affiliate / Partner</option>
             </select>
           </label>
@@ -137,7 +121,7 @@
               Affiliate work plan
               <textarea name="affiliateDetails" id="affiliateDetails" rows="5" placeholder="Tell us how you plan to affiliate, your social media or website handle, and the important details about your affiliate work."></textarea>
             </label>
-            <p class="field-note"> Share your referral channel, audience, and how you plan to promote the partnership.</p>
+            <p class="field-note">Share your referral channel, audience, and how you plan to promote the partnership.</p>
           </div>
           <label>
             Portfolio or GitHub
@@ -145,10 +129,58 @@
           </label>
           <p id="linkHelp" class="field-note">Optionally include a portfolio or GitHub link.</p>
           <label>
+            LinkedIn profile
+            <input type="url" name="linkedin" placeholder="https://linkedin.com/in/...">
+          </label>
+          <label>
             Upload CV
             <input type="file" name="cv" accept=".pdf,.doc,.docx" aria-describedby="fileHelp">
           </label>
           <p id="fileHelp" class="field-note">PDF or Word document preferred.</p>
+
+          <div class="form-break">
+            <span>A bit more about you</span>
+          </div>
+
+          <div class="field-group">
+            <h3>Years of experience</h3>
+            <label>
+              <select name="yearsExperience" required>
+                <option>Less than 1 year</option>
+                <option>1–2 years</option>
+                <option>3–5 years</option>
+                <option>6–10 years</option>
+                <option>10+ years</option>
+              </select>
+            </label>
+          </div>
+          <div class="field-group">
+            <h3>Availability</h3>
+            <label>
+              <select name="availability" required>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Contract / Project-based</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Expected pay (monthly or per-project — your call)
+            <input type="text" name="expectedPay" placeholder="e.g. $800/month or $50/hr">
+          </label>
+          <label>
+            Earliest start date
+            <input type="date" name="startDate">
+          </label>
+          <label>
+            Where did you hear about us?
+            <input type="text" name="heardAboutUs" placeholder="e.g. Twitter, a friend, job board...">
+          </label>
+          <label>
+            Why do you want to work with us?
+            <textarea name="motivation" rows="4" required placeholder="Be specific — generic answers stand out for the wrong reasons."></textarea>
+          </label>
+
           <label>
             Short pitch
             <textarea name="pitch" rows="5" required></textarea>
@@ -169,8 +201,8 @@
       </div>
     </footer>
   </div>
-   <script src="scripts.js"></script>
-  <script src="referral-tracking.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="referral-tracking.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
